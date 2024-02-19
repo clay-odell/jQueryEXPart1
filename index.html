@@ -109,26 +109,29 @@
       //    "Let's get ready to party with jQuery!"
       $(function () {
         console.log("Let's get ready to party with jQuery!");
-      
-      $("img").addClass("image-center");
-      $("article p:last-child").remove();
-      $("#title").css("font-size", Math.random() * 100 + "px");
-      $("ol").append($("<li>", {text: "I AM A NEW LIST ITEM"}));
-      $("aside")
-        .empty()
-        .append(
-          "<p>I am sorry that I ever included a list over here. Please forgive me.</p>"
-        );
-      $(".form-control").on('keyup blur change', function(){
-        let red = $(".form-control").eq(0).val();
-        let blue = $(".form-control").eq(1).val();
-        let green = $(".form-control").eq(2).val();
-        $("body").css("background-color", "rgb(" + red + "," + blue + "," + green + ")");
+
+        $("img").addClass("image-center");
+        $("article p:last-child").remove();
+        $("#title").css("font-size", Math.random() * 100 + "px");
+        $("ol").append($("<li>", { text: "I AM A NEW LIST ITEM" }));
+        $("aside")
+          .empty()
+          .append(
+            "<p>I am sorry that I ever included a list over here. Please forgive me.</p>"
+          );
+        $(".form-control").on("keyup blur change", function () {
+          let red = $(".form-control").eq(0).val();
+          let blue = $(".form-control").eq(1).val();
+          let green = $(".form-control").eq(2).val();
+          $("body").css(
+            "background-color",
+            "rgb(" + red + "," + blue + "," + green + ")"
+          );
+        });
+        $("img").on("click", function (e) {
+          $(e.target).remove();
+        });
       });
-      $('img').on('click', function(e) {
-        $(e.target).remove()
-      });
-    });
     </script>
   </body>
 </html>
